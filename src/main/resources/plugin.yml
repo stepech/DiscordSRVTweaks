@@ -1,0 +1,7 @@
+name: DiscordSRVVoiceAddon
+version: 1.0
+api-version: 1.17
+author: stepech
+main: com.stepech.DiscordSRVVoiceAddon.VoiceAddon
+depend:
+  - DiscordSRV
