@@ -27,9 +27,8 @@ public class JdaListener extends ListenerAdapter {
     @Override
     public void onGuildVoiceJoin(GuildVoiceJoinEvent event) {
         List<Member> connectedMembers = event.getChannelJoined().getMembers();
-        connectedMembers.remove(event.getMember());
         TextComponent message = Component.text(event.getMember().getEffectiveName() + " joined your voice");
-        informPlayers(connectedMembers, message);
+        informPlayers(connectedMembers, message, event.getEntity());
     }
 
 
@@ -37,13 +36,16 @@ public class JdaListener extends ListenerAdapter {
     public void onGuildVoiceLeave(GuildVoiceLeaveEvent event) {
         List<Member> connectedMembers = event.getChannelLeft().getMembers();
         TextComponent message = Component.text(event.getMember().getEffectiveName() + " left your voice");
-        informPlayers(connectedMembers, message);
+        informPlayers(connectedMembers, message, event.getEntity());
 
     }
 
-    private void informPlayers(List<Member> connectedMembers, TextComponent message) {
+    private void informPlayers(List<Member> connectedMembers, TextComponent message, Member target) {
         AccountLinkManager linkManager = DiscordSRV.getPlugin().getAccountLinkManager();
         for (Member member : connectedMembers) {
+            if (member == target) {
+                continue;
+            }
             UUID uuid = linkManager.getUuid(member.getId());
             if (uuid != null) {
                 Player player = plugin.getServer().getPlayer(uuid);
