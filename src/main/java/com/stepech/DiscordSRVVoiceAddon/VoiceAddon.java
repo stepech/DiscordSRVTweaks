@@ -11,6 +11,7 @@ public class VoiceAddon extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        Metrics metrics = new Metrics(this, 11981);
         DiscordSRV.api.subscribe(discordsrvListener);
 
     }
