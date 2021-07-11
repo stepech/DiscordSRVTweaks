@@ -1,9 +1,10 @@
-package com.stepech.DiscordSRVVoiceAddon;
+package com.stepech.DiscordSRVTweaks;
 
 import github.scarsz.discordsrv.api.Subscribe;
 import github.scarsz.discordsrv.api.events.DiscordReadyEvent;
 import github.scarsz.discordsrv.util.DiscordUtil;
 import org.bukkit.plugin.Plugin;
+
 
 public class DiscordSRVListener {
 

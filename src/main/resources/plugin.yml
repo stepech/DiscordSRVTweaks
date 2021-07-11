@@ -1,7 +1,7 @@
-name: DiscordSrvVoiceNotification
-version: 1.0
+name: DiscordSRVTweaks
+version: 1.0-SNAPSHOT
 api-version: 1.17
 author: stepech
-main: com.stepech.DiscordSRVVoiceAddon.VoiceAddon
+main: com.stepech.DiscordSRVTweaks.DiscordSRVTweaks
 depend:
   - DiscordSRV

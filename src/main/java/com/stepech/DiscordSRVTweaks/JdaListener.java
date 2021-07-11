@@ -1,4 +1,4 @@
-package com.stepech.DiscordSRVVoiceAddon;
+package com.stepech.DiscordSRVTweaks;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.Member;

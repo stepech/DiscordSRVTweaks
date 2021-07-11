@@ -1,17 +1,17 @@
-package com.stepech.DiscordSRVVoiceAddon;
+package com.stepech.DiscordSRVTweaks;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.util.DiscordUtil;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class VoiceAddon extends JavaPlugin implements Listener {
+public class DiscordSRVTweaks extends JavaPlugin implements Listener {
 
     private DiscordSRVListener discordsrvListener = new DiscordSRVListener(this);
 
     @Override
     public void onEnable() {
-        Metrics metrics = new Metrics(this, 11981);
+        Metrics metrics = new Metrics(this, 12009);
         DiscordSRV.api.subscribe(discordsrvListener);
 
     }
@@ -23,4 +23,5 @@ public class VoiceAddon extends JavaPlugin implements Listener {
         this.getLogger().info("Disconnected DiscordSRV hooks");
 
     }
+
 }
