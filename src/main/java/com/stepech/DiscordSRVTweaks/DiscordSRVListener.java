@@ -30,18 +30,4 @@ public class DiscordSRVListener {
 
         plugin.getLogger().info("DiscordAddon successfully hooked into DiscordSRV");
     }
-
-    @Subscribe
-    public void DiscordGuildMessagePreBroadcastEvent(DiscordGuildMessagePreBroadcastEvent event) {
-        Matcher matcher = discordImageLink.matcher(event.getMessage().toString());
-        if (matcher.find()) {
-            String originalMessage = LegacyComponentSerializer.legacyAmpersand().serialize(event.getMessage());
-            Component newMessage = LegacyComponentSerializer.legacyAmpersand().deserialize(originalMessage.replace(matcher.group(0), " sent a picture."));
-            event.setMessage(newMessage);
-
-        }
-
-    }
-
-
 }
